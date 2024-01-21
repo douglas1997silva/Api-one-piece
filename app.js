@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors'); // Adicione esta linha
 
 const app = express();
 
@@ -6,10 +7,11 @@ const PORT = 3000;
 
 
 app.use(express.json());
-
+app.use(express.static('public'));
+app.use(cors());
 
 app.listen(PORT, ()=>{
-    console.log(`Servidor Express rodando em http://localhost:${PORT}/`)
+    console.log(`Servidor Express rodando em https://api-one-piece-three.vercel.app/`)
 })
 
 const personagensOnePiece = [
@@ -55,3 +57,4 @@ app.get('/personagens/:id', (req, res) => {
       res.json(personagem);
     }
   });
+  
