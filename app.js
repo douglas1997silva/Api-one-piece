@@ -11,7 +11,7 @@ app.use(express.static('public'));
 app.use(cors());
 
 app.listen(PORT, ()=>{
-    console.log(`Servidor Express rodando em https://api-one-piece-three.vercel.app/`)
+    console.log(`Servidor Express rodando em http://localhost:${PORT}`)
 })
 
 const personagensOnePiece = [
